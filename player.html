@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StemWave patient video</title>
+<style>html,body{height:100%;margin:0;background:#05090e}body{display:grid;place-items:center}video{display:block;width:100%;height:100%;object-fit:contain;background:#05090e}</style></head>
+<body><video id="player" controls playsinline preload="metadata"></video>
+<script>
+const assets={hero:["stemwave-hero-patient-web.mp4","stemwave-hero-patient-poster.jpg"],short:["stemwave-testimonial-short-web.mp4","stemwave-testimonial-short-poster.jpg"],mashup:["stemwave-patient-mashup-web.mp4","stemwave-patient-mashup-poster.jpg"]};
+const key=new URLSearchParams(location.search).get("asset")||"hero";const selected=assets[key]||assets.hero;const base="https://github.com/ModernOrtho/dr-trevor-public-media/releases/download/stemwave-media-v1/";const player=document.querySelector("#player");player.src=base+selected[0];player.poster=base+selected[1];
+</script></body></html>
